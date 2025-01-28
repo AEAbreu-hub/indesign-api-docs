@@ -69,7 +69,7 @@ allOf:
             default: rgb
             enum:
               - rgb
-              - cmyk (only for jpeg)
+              - cmyk
               - gray
           embedColorProfile:
             type: boolean
