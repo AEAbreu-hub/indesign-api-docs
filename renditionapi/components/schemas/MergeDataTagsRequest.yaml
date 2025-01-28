@@ -1,0 +1,36 @@
+allOf:
+  - $ref: ./BaseJobRequest.yaml
+  - description: >-
+      Filters according to which the information related to data merge tags
+      would be retrieved.
+    type: object
+    required:
+      - params
+    properties:
+      params:
+        type: object
+        required:
+          - targetDocument
+        properties:
+          targetDocument:
+            description: The tagged document to be used for extraction of tags.
+            type: string
+          dataSource:
+            description: >-
+              The data source file to be used for extracting and matching the
+              tags.
+            type: string
+          filter:
+            description: >-
+              Accepted values are "all", "text", "image" and "qr". Multiple
+              values can be provided. Default value is "all". Example, ["Text,
+              Image"]
+            type: array
+            items:
+              type: string
+          includePageItemIdentifiers:
+            type: boolean
+            description: >-
+              If true, the information for associated page items is added to the
+              tags extracted from the document.
+            default: false

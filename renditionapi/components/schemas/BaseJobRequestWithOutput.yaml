@@ -1,0 +1,9 @@
+allOf:
+  - $ref: ./BaseJobRequest.yaml
+  - description: This is a base job request for any job with the option to specify output URLs.
+    type: object
+    properties:
+      outputs:
+        type: array
+        items:
+          $ref: ./OutputAsset.yaml

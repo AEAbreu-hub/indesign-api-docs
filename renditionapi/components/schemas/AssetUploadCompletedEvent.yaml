@@ -1,0 +1,12 @@
+allOf:
+  - $ref: ./BaseWebHookEvent.yaml
+  - description: Asset upload completed event.
+    type: object
+    properties:
+      state:
+        type: string
+        description: The current state of the job.
+        enum:
+          - ASSET_UPLOAD_COMPLETED
+      data:
+        type: object

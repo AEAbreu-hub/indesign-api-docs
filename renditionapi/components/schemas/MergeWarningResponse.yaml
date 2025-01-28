@@ -1,0 +1,29 @@
+description: Response containing the warnings after a merge process.
+allOf:
+  - $ref: ./WarningResponse.yaml
+  - type: object
+    properties:
+      csvMissingLinks:
+        description: List of missing links from CSV.
+        type: array
+        items:
+          type: string
+          description: The url of the missing link.
+      oversetText:
+        description: The information about the overset texts.
+        type: array
+        items:
+          type: object
+          properties:
+            page:
+              type: integer
+              description: The page number of overset instance.
+            charactersInOverset:
+              description: The number of characters in overset.
+              type: integer
+            wordsInOverset:
+              description: The number of words in overset.
+              type: integer
+            oversetText:
+              description: The part of text which is in overset.
+              type: string

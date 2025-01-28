@@ -1,0 +1,34 @@
+openapi: 3.0.0
+info:
+  description: >-
+    Firefly Service's InDesign APIs (Beta) offer resources to automate tedious, 
+    time-consuming design tasks through scalable cloud services, 
+    encouraging more personalization at scale, creative automation, 
+    and faster content delivery. 
+    Built on RESTful principles, these APIs use standard HTTP response codes, 
+    methods, and authentication techniques to deliver responses in JSON format. 
+  version: 0.1.0
+  title: Firefly Services - InDesign APIs (Beta)
+  contact:
+    email: idservices@adobe.com
+tags:
+  - name: Rendition API
+    description: The Rendition API creates a version of a file in a specified format (e.g., PNG, JPG, or PDF).
+security:
+  - ApiKeyAuth: []
+  - BearerAuth: []
+paths:
+  /v3/create-rendition:
+    $ref: paths/v3_create-rendition.yaml
+servers:
+  - url: https://indesign.adobe.io
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
