@@ -1,0 +1,17 @@
+allOf:
+  - $ref: ./FailedEvent.yaml
+  - description: >-
+      Failed Event for Data Merge API. For details of error codes refer to
+      ErrorCodesAndDefinitions.
+    type: object
+    properties:
+      data:
+        type: object
+        properties:
+          code:
+            type: integer
+            description: The error code.
+            enum:
+              - runtime_error
+              - capability_error
+              - validation_error

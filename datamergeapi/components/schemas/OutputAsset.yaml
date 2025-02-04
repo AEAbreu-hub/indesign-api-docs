@@ -1,0 +1,27 @@
+description: The url, where the output assets are to be posted after the job processing.
+type: object
+required:
+  - destination
+  - source
+properties:
+  destination:
+    type: object
+    required:
+      - url
+    properties:
+      url:
+        type: string
+        description: URL of the asset.
+      storageType:
+        type: string
+        description: >-
+          This is optional parameter. It is recommended to provide this
+          information.
+        enum:
+          - Azure
+          - Dropbox
+  source:
+    type: string
+    description: >-
+      This provides a path relative of the output where resource would be
+      generated. It cannot go up using '..' or '/'. Should be a valid file name.

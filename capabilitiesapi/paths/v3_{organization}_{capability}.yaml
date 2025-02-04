@@ -1,20 +1,14 @@
 post:
-  summary: Create JPEG, PNG, or PDF renditions
+  summary: Submit a capability execution request
   description: >-
-    Create a JPEG, PNG, or PDF rendition of a specific InDesign
-    document. <br></br>
-    The rendition output MIME types are: 
-    <ul> `image/jpeg` for JPEG. </ul> 
-    <ul> `image/png` for PNG. </ul>
-    <ul> `application/pdf` for PDF. </ul>
-  operationId: renditionJob
+    Submit an execution request for a custom capability.
+    Define the input assets and parameters the capability will use
+    when it is executed against the app engine.
   parameters:
     - name: x-gw-ims-org-id
       in: header
-      description: >-
-        This is the identifier for Adobe Identity Management Service (IMS) as defined in Adobe's developer console.
-        This is optional.
-      required: false
+      description: This is the identifier for Adobe Identity Management Service (IMS) as defined in Adobe's developer console.
+      required: true
       schema:
         type: string
     - name: x-api-key
@@ -29,14 +23,28 @@ post:
       required: true
       schema:
         type: string
+    - name: organization
+      in: path
+      description: >-
+        The organization identifier, reported in the response to a capability submit
+        request.
+      required: true
+      schema:
+        type: string
+    - name: capability
+      in: path
+      description: The name of the capability, specified in the capability manifest.
+      required: true
+      schema:
+        type: string
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/CreateRenditionRequest.yaml
+          $ref: ../components/schemas/BaseJobRequestWithOutput.yaml
     description: >-
-      This object specifies parameters for the JPEG,
-      PNG or PDF output.
+      This job request object specifies parameters for the execution of the
+      capability.
     required: true
   responses:
     '202':

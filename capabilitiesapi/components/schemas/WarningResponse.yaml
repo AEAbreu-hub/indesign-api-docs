@@ -1,0 +1,21 @@
+description: Response containing the warnings from a process.
+type: object
+properties:
+  missingFonts:
+    description: List of missing fonts.
+    type: array
+    items:
+      type: string
+      description: The name of a missing font.
+  missingLinks:
+    description: List of missing links.
+    type: array
+    items:
+      type: string
+      description: The url of the missing link.
+  otherWarnings:
+    description: List of remaining warnings.
+    type: array
+    items:
+      type: string
+      description: The description of the warning.

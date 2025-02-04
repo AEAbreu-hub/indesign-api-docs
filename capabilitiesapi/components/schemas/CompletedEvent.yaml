@@ -1,0 +1,21 @@
+allOf:
+  - $ref: ./BaseWebHookEvent.yaml
+  - description: Completed Event.
+    type: object
+    properties:
+      state:
+        type: string
+        description: The current state of the job.
+        enum:
+          - COMPLETED
+      data:
+        description: >-
+          The data returned from execution of capability. If the data is less
+          than 250 kB, then the data would be provided here.
+        type: object
+      dataURL:
+        description: >-
+          The data returned from execution of capability. If the data is more
+          than 250 kB and less the 20 MB, it will be provided as a presigned
+          URL. If it is more than 20 MB, the job will fail with error code 413.
+        type: string

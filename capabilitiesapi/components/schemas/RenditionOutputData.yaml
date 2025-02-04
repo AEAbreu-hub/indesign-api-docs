@@ -1,0 +1,21 @@
+allOf:
+  - $ref: ./BaseOutputData.yaml
+  - description: Output data for a rendition request.
+    type: object
+    properties:
+      outputs:
+        type: array
+        items:
+          type: object
+          properties:
+            input:
+              type: string
+              description: The input file path in the working directory.
+            renditions:
+              description: Information about the created renditions.
+              type: array
+              items:
+                $ref: ./RenditionDef.yaml
+            warnings:
+              $ref: ./WarningResponse.yaml
+              description: Warnings generated during the rendition request.

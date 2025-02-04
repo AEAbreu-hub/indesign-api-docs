@@ -1,0 +1,26 @@
+type: object
+description: Response body which is sent back on querying the status API.
+properties:
+  events:
+    type: array
+    items:
+      oneOf:
+        - $ref: ./QueuedEvent.yaml
+        - $ref: ./RunningEvent.yaml
+        - $ref: ./AssetsDownloadStartedEvent.yaml
+        - $ref: ./AssetDownloadStartedEvent.yaml
+        - $ref: ./AssetDownloadCompletedEvent.yaml
+        - $ref: ./AssetDownloadFailedEvent.yaml
+        - $ref: ./AssetsDownloadCompletedEvent.yaml
+        - $ref: ./AssetsUploadStartedEvent.yaml
+        - $ref: ./AssetUploadStartedEvent.yaml
+        - $ref: ./AssetUploadCompletedEvent.yaml
+        - $ref: ./AssetUploadFailedEvent.yaml
+        - $ref: ./AssetsUploadCompletedEvent.yaml
+        - $ref: ./AssetScanningStartedEvent.yaml
+        - $ref: ./AssetScanningCompletedEvent.yaml
+        - $ref: ./AssetScanningFailedEvent.yaml
+        - $ref: ./EngineProcessingStartedEvent.yaml
+        - $ref: ./EngineProcessingCompletedEvent.yaml
+        - $ref: ./CompletedEvent.yaml
+        - $ref: ./FailedEvent.yaml

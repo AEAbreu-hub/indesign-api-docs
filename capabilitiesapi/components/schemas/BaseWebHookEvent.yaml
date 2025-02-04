@@ -1,0 +1,12 @@
+type: object
+description: Base event response for any job.
+properties:
+  eventId:
+    description: Event ID for the latest event.
+    type: string
+  id:
+    description: Capability Execution ID.
+    type: string
+  timestamp:
+    type: string
+    description: Time stamp in ISO 8601 format

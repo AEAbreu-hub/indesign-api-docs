@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  description: >-
+    Documentation for InDesign APIs (Beta) - Firefly Services. This document
+    provides a detailed specification of the various exposed APIs, that can be
+    leveraged by developers.
+  version: 0.1.0
+  title: InDesign APIs (Beta) - Firefly Services
+  contact:
+    email: idservices@adobe.com
+tags:
+  - name: rendition
+    description: Rendition APIs.
+  - name: dataMerge
+    description: Data Merge API.
+security:
+  - ApiKeyAuth: []
+  - BearerAuth: []
+paths:
+  /v3/merge-data:
+    $ref: paths/v3_merge-data.yaml
+  /v3/merge-data-tags:
+    $ref: paths/v3_merge-data-tags.yaml
+servers:
+  - url: https://indesign.adobe.io
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

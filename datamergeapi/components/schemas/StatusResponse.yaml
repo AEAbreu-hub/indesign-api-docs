@@ -1,0 +1,11 @@
+type: object
+description: Response body which is sent back on querying the status API.
+properties:
+  events:
+    type: array
+    items:
+      oneOf:
+        - $ref: ./notstartedEvent.yaml
+        - $ref: ./runningEvent.yaml
+        - $ref: ./succeededEvent.yaml
+        - $ref: ./failedEvent.yaml

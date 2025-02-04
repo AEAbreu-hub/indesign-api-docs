@@ -1,0 +1,10 @@
+allOf:
+  - $ref: ./BaseWebHookEvent.yaml
+  - description: Engine processing completed event.
+    type: object
+    properties:
+      state:
+        type: string
+        description: The current state of the job.
+        enum:
+          - ENGINE_PROCESSING_COMPLETED

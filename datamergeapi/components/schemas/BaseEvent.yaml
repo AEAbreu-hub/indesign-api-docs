@@ -1,0 +1,6 @@
+type: object
+description: Base event response for any job.
+properties:
+  jobId:
+    description: Guid ID for the Job.
+    type: string

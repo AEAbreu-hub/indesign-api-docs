@@ -1,0 +1,12 @@
+type: object
+properties:
+  pageIndex:
+    type: string
+    description: >-
+      Refers to the indices of a page/spread in the input document for which the
+      rendition information is provided.
+  path:
+    description: The paths corresponding to the pages mentioned in pageIndex.
+    type: array
+    items:
+      type: string

@@ -10,14 +10,21 @@ info:
   contact:
     email: idservices@adobe.com
 tags:
-  - name: Rendition API
-    description: The Rendition API creates a version of a file in a specified format (e.g., PNG, JPG, or PDF).
+  - name: Capabilities API
+    description: >-
+      The Capabilities API allows you to submit custom capabilities 
+      to do almost anything you can do in InDesign using a custom script.
+      You can also check the status of an executed capability.
 security:
   - ApiKeyAuth: []
   - BearerAuth: []
 paths:
-  /v3/create-rendition:
-    $ref: paths/v3_create-rendition.yaml
+  /v3/status/{id}:
+    $ref: paths/v3_status_{id}.yaml
+  /v3/capability:
+    $ref: paths/v3_capability.yaml
+  /v3/{organization}/{capability}:
+    $ref: paths/v3_{organization}_{capability}.yaml
 servers:
   - url: https://indesign.adobe.io
 components:

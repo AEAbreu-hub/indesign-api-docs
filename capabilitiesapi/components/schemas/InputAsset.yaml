@@ -1,0 +1,28 @@
+type: object
+description: The URL where the asset is to be fetched.
+required:
+  - source
+properties:
+  source:
+    type: object
+    required:
+      - url
+    properties:
+      url:
+        type: string
+        description: URL of the asset.
+      storageType:
+        type: string
+        description: >-
+          This is an optional parameter, however IT IS RECOMMENDED to provide this
+          information.
+        enum:
+          - Azure
+          - Dropbox
+  destination:
+    type: string
+    description: >-
+      This provides a path relative to a temporary base directory (working
+      directory) where the resource would be downloaded. This would be used to
+      identify the assets within the parameters. It cannot go up using '..' or
+      '/'. Should be a valid file name.

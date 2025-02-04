@@ -1,0 +1,16 @@
+allOf:
+  - $ref: ./BaseWebHookEvent.yaml
+  - description: Assets download started Event.
+    type: object
+    properties:
+      state:
+        type: string
+        description: The current state of the job.
+        enum:
+          - ASSETS_DOWNLOAD_STARTED
+      data:
+        type: object
+        properties:
+          total:
+            type: string
+            description: Number of assets to download.

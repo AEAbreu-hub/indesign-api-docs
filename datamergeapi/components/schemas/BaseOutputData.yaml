@@ -1,0 +1,22 @@
+description: Base output data for any job.
+type: object
+properties:
+  generalData:
+    type: object
+    description: Provides any general data corresponding to the job.
+    properties:
+      appLogs:
+        type: object
+        description: >-
+          Provides information regarding the app logs file. This is only present
+          if params/generalSettings/appLogs is provided in input.
+        properties:
+          created:
+            type: boolean
+            description: True, if the file creation was successful and false otherwise.
+          errorReason:
+            type: string
+            description: In case of failure, the reason for the failure.
+          logsPath:
+            type: string
+            description: Provided path for the log file.
