@@ -1,4 +1,4 @@
-description: Base job request for any job.
+description: The base job request for any job.
 required:
   - assets
 properties:
@@ -20,19 +20,20 @@ properties:
             properties:
               fontsDirectories:
                 description: >-
-                  This lists the directories to be used as font directories for
+                  This lists the font directories for
                   the input InDesign documents. "Document Fonts" in parallel to
-                  the document will continue to work even without specifying. In
-                  absence of this, temporary base directory (working directory)
+                  the document will continue to work even without specifying them. 
+                  <br></br>
+                  If none are specified, a temporary base directory (working directory)
                   will be considered as a font directory.
                 type: array
                 items:
                   type: string
                   description: >-
-                    This provides a path of a directory relative to a temporary
+                    This provides a path to a directory relative to a temporary
                     base directory (working directory) where the fonts can be
                     found. It cannot go up using '..' or '/'. Should be a valid
-                    path. For specifying working directory, mention '.'.
+                    path. For specifying a working directory, mention '.'.
           links:
             description: Settings related to links.
             type: object
@@ -60,15 +61,15 @@ properties:
                             description: >-
                               The existing URI of the link that needs relinking.
                               If multiple links with this URI are found, all
-                              will be relinked. If linkID is provided, this
-                              attribute will be ignored. Either one of
-                              currentURI or linkID should be present.
+                              will be relinked. If `linkID is provided, this
+                              attribute will be ignored. Either
+                              `currentURI` or `linkID` should be present.
                           linkID:
                             type: integer
                             description: >-
                               The ID of the link which is to be relinked. If
-                              currentURI, is also provided it would be ignored.
-                              Either one of currentURI or linkID should be
+                              `currentURI` is also provided, it will be ignored.
+                              Either `currentURI` or `linkID` should be
                               present.
                           newAssetRelativePath:
                             type: string
@@ -85,5 +86,5 @@ properties:
                 type: string
                 description: >-
                   This provides a path to a file, relative to the temporary base
-                  directory (working directory). This file is where
+                  directory (working directory). This file is where the
                   application's logs are to be dumped.

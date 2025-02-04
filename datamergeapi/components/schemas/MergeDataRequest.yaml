@@ -12,13 +12,13 @@ allOf:
           - dataSource
         properties:
           targetDocument:
-            description: The tagged document to be used as template for merging.
+            description: The tagged document to be used as the template for merging.
             type: string
           dataSource:
             description: The data source files to be used.
             type: string
           outputMediaType:
-            description: The type of required output.
+            description: The type of output.
             type: string
             enum:
               - image/jpeg
@@ -33,15 +33,16 @@ allOf:
               jobOptionsFile:
                 type: string
                 description: >-
-                  Only relevant if outputMediaType is "application/pdf". The
-                  file, which will be used as PDF creation settings file during
-                  the export. This will take precedence over pdfPreset
-                  attribute.
+                  The
+                  file, which will be used as the PDF creation settings file during
+                  the export. This will take precedence over the `pdfPreset`
+                  attribute.<br></br>
+                  Only relevant if the `outputMediaType` is `application/pdf`.
               pdfPreset:
                 type: string
                 description: >-
                   The PDF export style to be used. This is relevant if
-                  outputMediaType is "application/pdf".
+                  `outputMediaType` is `application/pdf`.
                 default: High Quality Print
                 enum:
                   - High Quality Print
@@ -61,14 +62,14 @@ allOf:
                   - maximum
               linkImages:
                 description: >-
-                  Only relevant if outputMediaType is "application/x-indesign".
                   If true, links images to the target document. If false, embeds
-                  linked images, already referred in the target document.
+                  linked images already referred in the target document. 
+                  Only relevant if `outputMediaType` is `application/x-indesign`.
                 type: boolean
                 default: false
           recordRange:
             description: >-
-              The ranges of records to process for this job. Value can be 'All'
+              The ranges of records to process for this job. Value can be `All`,
               along with numeral ranges. For example, '1-2, 5'.
             type: string
           allowMultipleRecordsPerPage:
@@ -76,13 +77,13 @@ allOf:
             type: boolean
           multipleRecordLayoutOptions:
             description: >-
-              The options to be used in case allowMultipleRecordsPerPage is set
+              The options to be used when `allowMultipleRecordsPerPage` is set
               to true.
             type: object
             properties:
               arrangeBy:
                 description: |
-                  The order in which to arrange records in the target document.
+                  The order that records will be arranged in the target document.
                   * `rows_first` - Arranges records by row.
                   * `columns_first` - Arranges records by column.
                 type: string
@@ -92,44 +93,46 @@ allOf:
               bottomMargin:
                 description: >-
                   The offset value of the bottom margin in the target document.
-                  The values can be specified like '1 pt', '1 pica'. '1' etc. If
+                  The values can be specified like `1 pt`, `1 pica`, `1`, etc. If
                   a number is mentioned in the string, it will be used as a
                   value in pica.
                 type: string
               topMargin:
                 description: >-
-                  The offset value of the top margin in the target document. The
-                  values can be specified like '1 pt', '1 pica'. '1' etc. If a
-                  number is mentioned in the string, it will be used as a value
-                  in pica.
+                  The offset value of the top margin in the target document. 
+                  The values can be specified like `1 pt`, `1 pica`, `1`, etc. If
+                  a number is mentioned in the string, it will be used as a
+                  value in pica.
                 type: string
               leftMargin:
                 description: >-
                   The offset value of the left margin in the target document.
-                  The values can be specified like '1 pt', '1 pica'. '1' etc. If
+                  The values can be specified like `1 pt`, `1 pica`, `1`, etc. If
                   a number is mentioned in the string, it will be used as a
                   value in pica.
                 type: string
               rightMargin:
                 description: >-
                   The offset value of the right margin in the target document.
-                  The values can be specified like '1 pt', '1 pica'. '1' etc. If
+                  The values can be specified like `1 pt`, `1 pica`, `1`, etc. If
                   a number is mentioned in the string, it will be used as a
                   value in pica.
                 type: string
               columnSpacing:
                 description: >-
                   The amount of spacing between columns of records in the target
-                  document. The values can be specified like '1 pt', '1 pica'.
-                  '1' etc. If a number is mentioned in the string, it will be
-                  used as a value in pica.
+                  document. 
+                  The values can be specified like `1 pt`, `1 pica`, `1`, etc. If
+                  a number is mentioned in the string, it will be used as a
+                  value in pica.
                 type: string
               rowSpacing:
                 description: >-
                   The amount of spacing between rows of records in the target
-                  document. The values can be specified like '1 pt', '1 pica'.
-                  '1' etc. If a number is mentioned in the string, it will be
-                  used as a value in pica.
+                  document. 
+                  The values can be specified like `1 pt`, `1 pica`, `1`, etc. If
+                  a number is mentioned in the string, it will be used as a
+                  value in pica.
                 type: string
           imagePlacementOptions:
             description: >-
@@ -139,20 +142,21 @@ allOf:
             properties:
               centerImage:
                 description: >-
-                  If true, centers the image in the frame while preserving the
+                  If true, this centers the image in the frame while preserving the
                   frame size as content size and proportions. If the content is
                   larger than the frame, content around the edges is obscured by
-                  the bounding box of the frame. This doesn't work with
-                  'Content_Aware_Fit' fittingOption.
+                  the bounding box of the frame. <br></br>
+                  This won't work when `fittingOption`
+                  is `Content_Aware_Fit`.
                 type: boolean
               fittingOption:
                 description: >
-                  Method of fitting content in a frame.
+                  The method of fitting content in a frame.
 
                   * `content_aware_fit` - Selects best crop region of the
-                  content for the frame based on Adobe Sensei. Note: Preserves
+                  content for the frame based on Adobe Sensei. This preserves
                   frame size but it might scale the content size. If this
-                  fitting is set, centerImage property is turned-off.
+                  fitting is set, the `centerImage` property is turned-off.
 
                   * `fill_proportional` - Resizes content to fill the frame
                   while preserving the proportions of the content. If the
@@ -160,17 +164,17 @@ allOf:
                   content is obscured by the bounding box of the frame.
 
                   * `fit_content_to_frame` - Resizes content to fit the frame.
-                  Note: Content that is a different size than the frame appears
+                  Content that is a different size than the frame appears
                   stretched or squeezed.
 
                   * `fit_frame_to_content` - Resizes the frame so it fits the
                   content.
 
-                  * `honor_existing_style` - Apply the frame fitting based on
-                  existing setting applied on the original frame.
+                  * `honor_existing_style` - Applies the frame fitting based on
+                  existing settings applied on the original frame.
 
                   * `preserve_sizes` - Preserves the original sizes of the frame
-                  and the content. Note: Content that is larger than the frame
+                  and the content. Content that is larger than the frame
                   is obscured around the edges.
 
                   * `proportional` - Resizes content to fit the frame while
@@ -187,9 +191,10 @@ allOf:
                   - proportional
               linkImages:
                 description: >-
-                  If true, links images to the target document. If false, embeds
-                  images in the target document. This is in reference to the
+                  This applies to the
                   images being brought in the document while merging.
+                  If true, this links images to the target document. If false, it embeds
+                  images in the target document.
                 type: boolean
           pagesPerDocument:
             description: The maximum number of pages per document.
@@ -200,7 +205,7 @@ allOf:
             default: false
           convertUrlToHyperlink:
             description: >-
-              If true, all urls in the merged document are converted into
+              If true, all URLs in the merged document are converted into
               hyperlinks.
             type: boolean
             default: true

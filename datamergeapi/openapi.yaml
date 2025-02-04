@@ -1,18 +1,17 @@
 openapi: 3.0.0
 info:
   description: >-
-    Documentation for InDesign APIs (Beta) - Firefly Services. This document
-    provides a detailed specification of the various exposed APIs, that can be
-    leveraged by developers.
+    Firefly Service's RESTful InDesign APIs (beta) offer resources to automate tedious, 
+    time-consuming design tasks through scalable cloud services, 
+    encouraging more personalization at scale, creative automation, 
+    and faster content delivery. 
   version: 0.1.0
-  title: InDesign APIs (Beta) - Firefly Services
+  title: Firefly Services - InDesign APIs (beta)
   contact:
     email: idservices@adobe.com
 tags:
-  - name: rendition
-    description: Rendition APIs.
-  - name: dataMerge
-    description: Data Merge API.
+  - name: Data Merge API
+    description: The Data Merge API is used to create document variations from data and to extract data merge tags. 
 security:
   - ApiKeyAuth: []
   - BearerAuth: []

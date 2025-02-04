@@ -1,5 +1,5 @@
 type: object
-description: The Url, from where the asset is to be fetched.
+description: The URL where the asset will be fetched.
 required:
   - source
 properties:
@@ -10,11 +10,11 @@ properties:
     properties:
       url:
         type: string
-        description: URL of the asset.
+        description: The URL of the asset.
       storageType:
         type: string
         description: >-
-          This is optional parameter. It is recommended to provide this
+          This is optional parameter, however IT IS RECOMMENDED to provide this
           information.
         enum:
           - Azure
@@ -23,6 +23,6 @@ properties:
     type: string
     description: >-
       This provides a path relative to a temporary base directory (working
-      directory) where resource would be downloaded. This would be used to
+      directory) where the resource would be downloaded. This would be used to
       identify the assets within the parameters. It cannot go up using '..' or
       '/'. Should be a valid file name.
