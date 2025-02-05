@@ -1,0 +1,22 @@
+{
+    "manifestVersion": "1.0.0",
+    "id": "Unique id for the capability",
+    "name": "Name of the capability",
+    "version": "0.0.1",
+    "host": {
+        "app": "indesign",
+        "minVersion": "17.0.0",
+        "maxVersion": "99.9.9"
+    },
+    "apiEntryPoints": [
+        {
+            "type": "capability",
+            "path": "sample.jsx",
+            "language": "extendscript"
+        },
+        {
+            "type" : "openapi",
+            "path" : "swagger.yml"
+        }
+    ]
+}
