@@ -1,6 +1,4 @@
 post:
-  tags:
-    - dataMerge
   summary: Perform a data merge
   description: >-
     Returns InDesign documents or PDFs that are created by

@@ -1,31 +1,26 @@
 post:
-  tags:
-    - dataMerge
-  summary: Gets data merge tags
+  summary: Get data merge tags
   description: >-
-    Retrieves the data merge tags from the document. For the structure of
-    StatusCompletedResponse/output/data refer to DataMergeTagsOutputData. Also
-    for the list of possible error codes in FailedEvent refer to
-    DataMergeFailedData.
+    Retrieves the data merge tags from a document.
   operationId: dataMergeTags
   parameters:
     - name: x-gw-ims-org-id
       in: header
       description: >-
-        Identifier for IMS organization as defined in Adobe's developer console.
-        This is optional
+        This is the identifier for Adobe Identity Management Service (IMS) as defined in Adobe's developer console.
+        This is optional.
       required: false
       schema:
         type: string
     - name: x-api-key
       in: header
-      description: API key as defined in Adobe's developer console
+      description: The API key as defined in Adobe's developer console.
       required: true
       schema:
         type: string
     - name: Authorization
       in: header
-      description: Authorization token with bearer "token_value"
+      description: The authorization token with bearer "token_value".
       required: true
       schema:
         type: string
@@ -35,7 +30,7 @@ post:
         schema:
           $ref: ../components/schemas/MergeDataTagsRequest.yaml
     description: >-
-      Job request object that specifies parameters for retrieving the data merge
+      This job request object specifies parameters for retrieving the data merge
       tags.
     required: true
   responses:
