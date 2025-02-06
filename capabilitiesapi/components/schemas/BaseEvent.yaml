@@ -1,6 +1,0 @@
-type: object
-description: The job event response object.
-properties:
-  jobId:
-    description: The GUID for the job.
-    type: string
