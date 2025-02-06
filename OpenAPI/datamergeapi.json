@@ -429,7 +429,7 @@
                         ]
                       },
                       "linkImages": {
-                        "description": "If true, links images to the target document. If false, embeds linked images already referred in the target document.  Only relevant if `outputMediaType` is `application/x-indesign`.",
+                        "description": "If `true`, links images to the target document. If `false`, embeds linked images already referred in the target document.  Only relevant if `outputMediaType` is `application/x-indesign`.",
                         "type": "boolean",
                         "default": false
                       }
@@ -440,11 +440,11 @@
                     "type": "string"
                   },
                   "allowMultipleRecordsPerPage": {
-                    "description": "The number of records to place on each page of the document.",
+                    "description": "If `true`, will show as many records as will fit on a page.",
                     "type": "boolean"
                   },
                   "multipleRecordLayoutOptions": {
-                    "description": "The options to be used when `allowMultipleRecordsPerPage` is set to true.",
+                    "description": "The options to be used when `allowMultipleRecordsPerPage` is set to `true`.",
                     "type": "object",
                     "properties": {
                       "arrangeBy": {
